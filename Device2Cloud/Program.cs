@@ -9,7 +9,7 @@ namespace Device2Cloud
 {
     class Program
     {
-        static string connectionString = "HostName=TrainLucas1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=PmHijohWzgco6GH86yp+qBEeXTD57p34BbpBgfyzwyY=";
+        static string connectionString = "{Coloque aqui a connection string do IoTHubOwner}";
         static string iotHubD2cEndpoint = "messages/events";
         static EventHubClient eventHubClient;
 

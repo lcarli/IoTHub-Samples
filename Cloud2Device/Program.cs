@@ -10,7 +10,7 @@ namespace Cloud2Device
     class Program
     {
         static ServiceClient serviceClient;
-        static string connectionString = "HostName=TrainLucas1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=PmHijohWzgco6GH86yp+qBEeXTD57p34BbpBgfyzwyY=";
+        static string connectionString = "{Coloque aqui a connection string do IoTHubOwner}";
 
         static void Main(string[] args)
         {
@@ -31,7 +31,7 @@ namespace Cloud2Device
         {
             var commandMessage = new Message(Encoding.ASCII.GetBytes(message));
             commandMessage.Ack = DeliveryAcknowledgement.Full;
-            await serviceClient.SendAsync("IntelEdison1", commandMessage);
+            await serviceClient.SendAsync("{Nome do deviceID}", commandMessage);
         }
 
         private async static void ReceiveFeedbackAsync()

@@ -11,7 +11,7 @@ namespace DeviceDemo1
     class Program
     {
         static RegistryManager registryManager;
-        static string connectionString = "HostName=TrainLucas1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=PmHijohWzgco6GH86yp+qBEeXTD57p34BbpBgfyzwyY=";
+        static string connectionString = "{Escreva aqui sua connection string}";
 
         static void Main(string[] args)
         {
@@ -22,7 +22,7 @@ namespace DeviceDemo1
 
         private async static Task AddDeviceAsync()
         {
-            string deviceId = "IntelEdison1";
+            string deviceId = "{Escreva aqui o nome do DeviceID que você deseja}";
             Device device;
             try
             {

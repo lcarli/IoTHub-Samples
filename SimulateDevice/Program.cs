@@ -11,14 +11,13 @@ namespace SimulateDevice
 {
     class Program
     {
-        //HostName=TrainLucas1.azure-devices.net;DeviceId=IntelEdison1;SharedAccessKey=e5hJ9Hl/DxVIrXRr3NMu8eFFUzQ9Jy7DxR78NH0bKtc=
         static DeviceClient deviceClient;
-        static string iotHubUri = "TrainLucas1.azure-devices.net";
-        static string deviceKey = "e5hJ9Hl/DxVIrXRr3NMu8eFFUzQ9Jy7DxR78NH0bKtc=";
+        static string iotHubUri = "{Escreva aqui a URI do IoTHub criado. EX: xxx.azure-devices.net}";
+        static string deviceKey = "{Coloque aqui o deviceKey. EX: e5hJw/DasdasxVIrXRr3NMu8eFR78NH0bKtc=}";
         static void Main(string[] args)
         {
             Console.WriteLine("Simulated device\n");
-            deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("IntelEdison1", deviceKey));
+            deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("{Coloque aqui o nome do DeviceID}", deviceKey));
             SendDeviceToCloudMessagesAsync();
             ReceiveC2dAsync();
             Console.ReadLine();
@@ -35,7 +34,7 @@ namespace SimulateDevice
 
                     var telemetryDataPoint = new
                     {
-                        deviceId = "IntelEdison1",
+                        deviceId = "{Nome do deviceID}",
                         windSpeed = currentWindSpeed
                     };
                     var messageString = JsonConvert.SerializeObject(telemetryDataPoint);
